@@ -1,0 +1,7 @@
+{
+	"name": "Machete",
+	"provides": {
+		"serviceprovider": "Displore\\Machete\\MacheteServiceProvider",
+		"facade": "Displore\\Machete\\Facades\\Theme"
+	}
+}
