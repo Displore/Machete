@@ -3,6 +3,7 @@
 	"requirement": "displore/machete",
 	"provides": {
 		"serviceprovider": "Displore\\Machete\\MacheteServiceProvider",
-		"facade": "Displore\\Machete\\Facades\\Theme"
+		"facade": "Theme",
+		"facade-namespace": "Displore\\Machete\\Facades\\Theme"
 	}
 }
