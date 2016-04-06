@@ -76,8 +76,8 @@ class ThemeCommand extends Command
     {
         $theme = strtolower($theme);
 
-        $themeLocation = $this->config->get('machete.locations.themes').'/'.$theme;
-        $assetsLocation = $this->config->get('machete.locations.assets').'/'.$theme;
+        $themeLocation = $this->config->get('displore.machete.locations.themes').'/'.$theme;
+        $assetsLocation = $this->config->get('displore.machete.locations.assets').'/'.$theme;
 
         $this->filesystem->makeDirectory($themeLocation, 0755, true);
         $this->filesystem->makeDirectory($assetsLocation, 0755, true);
@@ -98,8 +98,8 @@ class ThemeCommand extends Command
     {
         $theme = strtolower($theme);
 
-        $themeLocation = $this->config->get('machete.locations.themes').'/'.$theme;
-        $assetsLocation = $this->config->get('machete.locations.assets').'/'.$theme;
+        $themeLocation = $this->config->get('displore.machete.locations.themes').'/'.$theme;
+        $assetsLocation = $this->config->get('displore.machete.locations.assets').'/'.$theme;
 
         if ($this->filesystem->exists($themeLocation)) {
             $this->filesystem->deleteDirectory($themeLocation);

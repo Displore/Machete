@@ -82,10 +82,10 @@ class Theme
      */
     public function getFromConfig()
     {
-        if (Config::has('machete.theme')) {
-            return Config::get('machete.theme');
-        } elseif (Config::has('machete.default')) {
-            return Config::get('machete.default');
+        if (Config::has('displore.machete.theme')) {
+            return Config::get('displore.machete.theme');
+        } elseif (Config::has('displore.machete.default')) {
+            return Config::get('displore.machete.default');
         }
 
         throw new \Exception('The (default) theme is not set.');
@@ -99,8 +99,8 @@ class Theme
      */
     public function getFromCache()
     {
-        if (Config::get('machete.cache')) {
-            return Cache::rememberForever('machete.theme', function () {
+        if (Config::get('displore.machete.cache')) {
+            return Cache::rememberForever('displore.machete.theme', function () {
                 return $this->get();
             });
         }
@@ -146,7 +146,7 @@ class Theme
     protected function location($dir)
     {
         if ( ! isset($this->locations[$dir])) {
-            $this->locations[$dir] = Config::get('machete.locations.'.$dir);
+            $this->locations[$dir] = Config::get('displore.machete.locations.'.$dir);
         }
 
         return $this->locations[$dir];
