@@ -1,13 +1,14 @@
 {
     "name": "displore/machete",
-    "description": "Themes, Presenters and extensions for Laravel's Blade template engine.",
+    "description": "Themes, Presenters, Widgets and extensions for Laravel's Blade template engine.",
     "keywords": [
         "Displore",
         "Machete",
         "Laravel",
         "Blade",
         "Themes",
-        "Presenters"
+        "Presenters",
+        "Widgets"
     ],
     "homepage": "https://github.com/Displore/Machete",
     "license": "EUPL-1.1",
@@ -19,17 +20,15 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5.1",
-        "php": "~5.5|~7.0"
+        "php": "~5.5|~5.6|~7.0",
+        "illuminate/support": "~5.2|~5.3",
+        "displore/themes": "~1",
+        "displore/presenters": "~1",
+        "displore/widgets": "~1"
     },
     "autoload": {
         "psr-4": {
             "Displore\\Machete\\": "src"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
         }
     }
 }

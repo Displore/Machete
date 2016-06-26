@@ -19,15 +19,18 @@ This does everything for you, from the Composer requirement to the addition of L
 ``` bash
 $ composer require displore/machete
 ```
-This requires the addition of the Machete service provider and Theme facade alias to config/app.php     
+This requires the addition of the Machete service provider and Theme and Widget facade alias to config/app.php     
 `Displore\Machete\MacheteServiceProvider::class,`
-and
+and the facades
 `Displore\Machete\Facades\Theme::class,`
+`Displore\Widgets\Facades\Widget::class,`
 
 ### Configuration
 
+The theming and widgets services comes with some configuration.
 ```bash
-$ php artisan vendor:publish --tag=displore.machete.config
+$ php artisan vendor:publish --tag=displore.themes.config
+$ php artisan vendor:publish --tag=displore.widgets.config
 ```
 
 ## Usage
@@ -45,7 +48,7 @@ $ php artisan vendor:publish --tag=displore.machete.config
 @title('My site') // compiled to @section('title', 'My site')
 ```
 
-### Presenter
+### Presenters
 
 1. Your presentable model should use the `Displore\Machete\Presenter\Presentable` trait.
 2. Set a `$presenter` variable in your model, containing a path to the presenter class for that model.
@@ -69,9 +72,22 @@ Theme::set('mytheme')->register();
 Theme::get();
 Theme::setDefault();
 Theme::getDefault();
-Theme::getFromConfig();
-Theme::getFromCache();
 Theme::asset('js/app.js');
+```
+
+### Widgets
+
+With Laravel, the array of providers is found in a dedicated configuration file. In your views you can call the `Widget` facade to get widgets.
+
+```php
+Widget::get('headline');
+```
+
+It is also possible to use a dynamic widgets provider, meaning that on every request, all classes in a given path will be searched for the widget needed. Especially useful during development. For this, set `dynamic` to true in the configuration file.
+
+You can also set widgets during runtime, with both the static and dynamic widgets provider:
+```php
+Widget::set('headline', new My\Widgets\Headline::class);
 ```
 
 ## Further documentation
