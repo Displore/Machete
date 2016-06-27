@@ -8,8 +8,6 @@ class MacheteServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -25,8 +23,6 @@ class MacheteServiceProvider extends ServiceProvider
 
     /**
      * Register any package services.
-     *
-     * @return void
      */
     public function register()
     {
@@ -69,7 +65,7 @@ class MacheteServiceProvider extends ServiceProvider
 
     protected function bindDirectives()
     {
-        $directives = new Directives;
+        $directives = new Directives();
 
         $directives->datetime();
         $directives->ifLoggedIn();
