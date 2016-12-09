@@ -9,7 +9,7 @@ class Directives
     /**
      * Format a timestamp.
      * From: https://laravel.com/docs/5.1/blade#extending-blade.
-     * 
+     *
      * @return string
      */
     public function datetime()
@@ -21,7 +21,7 @@ class Directives
 
     /**
      * Shortcut to show contents to logged in users. End with `@endIf`.
-     * 
+     *
      * @return string
      */
     public function ifLoggedIn()
@@ -33,7 +33,7 @@ class Directives
 
     /**
      * Shortcut to extend a layout.
-     * 
+     *
      * @return string
      */
     public function layout()
@@ -59,7 +59,7 @@ class Directives
 
     /**
      * Shortcut to include a partial view.
-     * 
+     *
      * @return string
      */
     public function partial()
@@ -72,7 +72,7 @@ class Directives
     /**
      * Show the page's title.
      * Use `@title` in your layout, `@title('my page')` in your pages.
-     * 
+     *
      * @return string
      */
     public function title()

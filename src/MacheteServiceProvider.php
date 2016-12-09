@@ -19,6 +19,8 @@ class MacheteServiceProvider extends ServiceProvider
         } else {
             $this->bindDirectives();
         }
+
+        require __DIR__.'/helpers.php';
     }
 
     /**
