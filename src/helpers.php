@@ -6,6 +6,7 @@ if (!function_exists('on_page')) {
      * This uses the URL path.
      *
      * @param string $path
+     *
      * @return bool
      */
     function on_page($path)
@@ -20,6 +21,7 @@ if (!function_exists('on_route')) {
      * This uses the named route.
      *
      * @param string $route
+     *
      * @return bool
      */
     function on_route($route)
@@ -34,6 +36,7 @@ if (!function_exists('return_if')) {
      *
      * @param mixed $condition
      * @param mixed $value
+     *
      * @return void
      */
     function return_if($condition, $value)
